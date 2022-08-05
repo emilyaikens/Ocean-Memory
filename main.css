@@ -12,7 +12,6 @@ body {
     transform-style: preserve-3d;
     position: relative;
     cursor: grab; /* can change this to a hover thing later*/
-    background-color: grey;
 }
 .card-front,
 .card-back {
@@ -25,10 +24,22 @@ body {
 .card-back {
     transform: rotateY(180deg);
     user-select: none;
+    background-color: pink;
+}
+.card-front {
+    background-color: lightblue;
 }
 .flipped .card-front {
     transform: rotateY(180deg);
 }
 .flipped .card-back {
     transform: rotateY(0);
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-content: center;
+    row-gap: 3px;
+    column-gap: 3px;
 }
