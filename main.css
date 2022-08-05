@@ -21,7 +21,6 @@ body {
     width: 100%;
     transition: transform 1s;
     backface-visibility: hidden;
-    border-radius: 10px;
     text-align: center;
 }
 .card-back {
