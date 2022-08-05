@@ -9,34 +9,26 @@ body {
 .card {
     width: 100px;
     height: 100px;
-}
-.card-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
     transform-style: preserve-3d;
     position: relative;
     cursor: grab; /* can change this to a hover thing later*/
+    background-color: grey;
 }
-.card-inner.is-flipped {
-    transform: rotateY(180deg);
-}
-.card-face {
+.card-front,
+.card-back {
     position: absolute;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    transition: transform 1s;
     backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 16px;
 }
-.card-face--front {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: pink;
-}
-.card-face--back {
+.card-back {
     transform: rotateY(180deg);
-    background-color: blue;
+    user-select: none;
 }
+.flipped .card-front {
+    transform: rotateY(180deg);
+}
+.flipped .card-back {
+    transform: rotateY(0);
 }
