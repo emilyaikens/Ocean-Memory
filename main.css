@@ -5,6 +5,7 @@
 body {
     width: 100%;
     min-height: 100vh;
+    text-align: center;
 }
 .card {
     width: 100px;
@@ -20,6 +21,8 @@ body {
     width: 100%;
     transition: transform 1s;
     backface-visibility: hidden;
+    border-radius: 10px;
+    text-align: center;
 }
 .card-back {
     transform: rotateY(180deg);
