@@ -8,20 +8,17 @@ let gameVars = {
     matches: 0,
     clicks: 0,
     firstSelect: "null",
-    secondSelect: "null"
+    secondSelect: "null",
+    currentCards: [],
 };
 if (gameVars.totalClicks === 1) {
     //start timer
 }
-
+    
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function() {
             card.classList.toggle('flipped');
-         })
-    });
-
-    domSelect.cards.forEach(function(card) {
-        card.addEventListener('click', function() {
+            gameVars.currentCards.push(card.id);
            let cardFront = card.firstElementChild.innerHTML; //get inner html of .card-front of clicked card
            gameVars.clicks = gameVars.clicks + 1; //count total clicks
            if (gameVars.firstSelect === "null") { //player selections
@@ -30,27 +27,37 @@ if (gameVars.totalClicks === 1) {
             gameVars.secondSelect = cardFront;
            };
            countMatches();
+           flipBack();
+           console.log(gameVars.currentCards);
          });
     });
 
-function flipBack () {
-    if (gameVars.clicks === 2 && gameVars.firstSelect !== gameVars.secondSelect) {
-        gameVars.clicks = 0;
-        let flipTimeout = setTimeout(function () {
-            
-        }, 3000);
-    }
-}
+// if the click number gets higher than 2, then set back to 0
+
+function lockCards() {
+//remove event listener 
+};
 
 function countMatches () {
     if (gameVars.firstSelect !== "null" && gameVars.secondSelect !== "null") { 
         if (gameVars.firstSelect === gameVars.secondSelect) {
             gameVars.matches = gameVars.matches + 1;
             domSelect.matches.innerHTML = ("Matches: " + gameVars.matches);
-            //can't click on matched tiles anymore
+            //can't click on matched tiles anymore (lockCards())
         }
     gameVars.firstSelect = "null";
     gameVars.secondSelect = "null";
+    };
+    console.log(gameVars.clicks);
+};
+
+function flipBack () {
+    if (gameVars.clicks === 2 && gameVars.firstSelect !== gameVars.secondSelect) {
+        setTimeout(function () {
+            gameVars.currentCards.forEach(function (current) {
+                current.classList.toggle('flipped');
+            });
+    }, 3000);
     };
 };
 
