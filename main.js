@@ -29,9 +29,6 @@ if (gameVars.totalClicks === 1) {
            } else if (gameVars.firstSelect !== "null" && gameVars.secondSelect === "null") {
             gameVars.secondSelect = cardFront;
            };
-           console.log(gameVars.clicks);
-           console.log(gameVars.secondSelect);
-           console.log(gameVars.firstSelect);
            countMatches();
          });
     });
@@ -39,7 +36,9 @@ if (gameVars.totalClicks === 1) {
 function flipBack () {
     if (gameVars.clicks === 2 && gameVars.firstSelect !== gameVars.secondSelect) {
         gameVars.clicks = 0;
- //timer ooooof
+        let flipTimeout = setTimeout(function () {
+            
+        }, 3000);
     }
 }
 
@@ -47,8 +46,7 @@ function countMatches () {
     if (gameVars.firstSelect !== "null" && gameVars.secondSelect !== "null") { 
         if (gameVars.firstSelect === gameVars.secondSelect) {
             gameVars.matches = gameVars.matches + 1;
-            console.log("matches" + gameVars.matches);
-            domSelect.matches.innerHTML = ("matches: " + gameVars.matches);
+            domSelect.matches.innerHTML = ("Matches: " + gameVars.matches);
             //can't click on matched tiles anymore
         }
     gameVars.firstSelect = "null";
