@@ -6,46 +6,55 @@ let domSelect = {
 };
 let gameVars = {
     matches: 0,
-    totalClicks: 0,
+    clicks: 0,
     firstSelect: "null",
     secondSelect: "null"
 };
-initiate();
-//click and flip card
-function initiate () {
+if (gameVars.totalClicks === 1) {
+    //start timer
+}
+
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function() {
             card.classList.toggle('flipped');
          })
     });
-};
+
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function() {
            let cardFront = card.firstElementChild.innerHTML; //get inner html of .card-front of clicked card
-           gameVars.totalClicks = gameVars.totalClicks + 1; //count total clicks
+           gameVars.clicks = gameVars.clicks + 1; //count total clicks
            if (gameVars.firstSelect === "null") { //player selections
              gameVars.firstSelect = cardFront;
            } else if (gameVars.firstSelect !== "null" && gameVars.secondSelect === "null") {
             gameVars.secondSelect = cardFront;
            };
-           console.log(gameVars.totalClicks);
+           console.log(gameVars.clicks);
            console.log(gameVars.secondSelect);
            console.log(gameVars.firstSelect);
+           countMatches();
          });
     });
 
-if (gameVars.firstSelect !== "null" && gameVars.secondSelect !== "null") { //work on this!
-    if (gameVars.firstSelect === gameVars.secondSelect) {
-        gameVars.matches = gameVars.matches + 1;
-        console.log(gameVars.matches);
-        domSelect.matches.innerHTML = ("matches: " + gameVars.matches);
-        //can't click on matched tiles anymore
+function flipBack () {
+    if (gameVars.clicks === 2 && gameVars.firstSelect !== gameVars.secondSelect) {
+        gameVars.clicks = 0;
+ //timer ooooof
     }
-    //turn cards back around (on timer)
-};
-if (gameVars.totalClicks === 1) {
-    //start timer
 }
+
+function countMatches () {
+    if (gameVars.firstSelect !== "null" && gameVars.secondSelect !== "null") { 
+        if (gameVars.firstSelect === gameVars.secondSelect) {
+            gameVars.matches = gameVars.matches + 1;
+            console.log("matches" + gameVars.matches);
+            domSelect.matches.innerHTML = ("matches: " + gameVars.matches);
+            //can't click on matched tiles anymore
+        }
+    gameVars.firstSelect = "null";
+    gameVars.secondSelect = "null";
+    };
+};
 
 //if timer === 0, end game 
 
