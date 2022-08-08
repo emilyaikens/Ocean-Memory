@@ -9,7 +9,7 @@ function initiate() {
         matches: 0,
         curCards: [],
         min: 10,
-        cardImages: ["photos/octopus.png"]
+        cardImages: ["images/octopus.png"]
     };
     let time = vars.min * 60;
     const domSelect = {
