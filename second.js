@@ -29,9 +29,10 @@ function initiate() {
         button: document.getElementById("play-again")
     };
 
-    function shuffleCards () {
-    //set imgs to different card ids 
-    };
+
+    //function shuffleCards () { //set imgs to different card ids 
+        document.getElementById("1").innerHTML = `<img src="images/jelly.png">`
+    //};
 
     function gameTimer() {
         let myInterval = setInterval(timer, 1000); // one second interval
