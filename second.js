@@ -17,8 +17,8 @@ function shuffleCards () {
     //set imgs to different card ids 
 }
 
-
-if (vars.clicks === 1) { //if clicks === 1, start timer
+function startTimer() {
+    console.log("startTimer activated");
     let time = vars.min * 60;
     setInterval(timer, 1000);
     function timer() {
@@ -31,7 +31,6 @@ if (vars.clicks === 1) { //if clicks === 1, start timer
         vars.time--;
     };
 };
-
 
 
 clickCard();
@@ -55,7 +54,9 @@ function clickCard () {
             //console.log(vars.clicks + " clicks");
             //console.log(vars.firstSelect + " first");
             //console.log(vars.secondSelect + " second");
-        })
+            //console.log(vars.clicks);
+            if (vars.clicks === 1) {startTimer()}; //if clicks === 1, start timer
+        });
     });
 };
 
