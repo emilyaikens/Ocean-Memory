@@ -4,7 +4,7 @@ let vars = {
     clicks: 0,
     matches: 0,
     curCards: [],
-    min: 10
+    min: 1
 };
 let domSelect = {
     cards: document.querySelectorAll(".card"),
@@ -18,20 +18,17 @@ function shuffleCards () {
 }
 
 function startTimer() {
-    console.log("startTimer activated");
     let time = vars.min * 60;
-    setInterval(timer, 1000);
+    let myInterval = setInterval(timer, 1000);
     function timer() {
-        let minutes = Math.floor(vars.time / 60);
-        let seconds = vars.time % 60;
-        if (seconds > 10) {
-            seconds = "0" + seconds
-        };
-        domSelect.timer.innerHTML = ("Time left: " + minutes + ":" + seconds);
-        vars.time--;
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        if (seconds < 10) {seconds = "0" + seconds};
+        if (time === 0) {clearInterval(myInterval)};
+        domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
+        time--;
     };
 };
-
 
 clickCard();
 
