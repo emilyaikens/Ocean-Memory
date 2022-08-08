@@ -62,7 +62,7 @@ function initiate() {
             //console.log(vars.secondSelect + " second");
             //console.log(vars.clicks);
             if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
-            card.removeEventListener('click', clickCard); //FIX THIS
+            //card.removeEventListener('click', clickCard); //FIX THIS
         });
     });
 
