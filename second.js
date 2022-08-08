@@ -57,10 +57,11 @@ function checkMatch () {
                 let currentCard = document.getElementById(card);
                 currentCard.classList.toggle('flipped');
             })
-    }, 3000);
+    }, 2500);
     };
     vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
     vars.secondSelect = "null";
+    setTimeout(function(){vars.curCards = []}, 2501); //clears current card array after timed flip executes
 };
 
 //if match = 8 run endGame function 
