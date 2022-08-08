@@ -1,44 +1,46 @@
 initiate();
 
 function initiate() {
-let vars = {
-    firstSelect: "null",
-    secondSelect: "null",
-    clicks: 0,
-    matches: 0,
-    curCards: [],
-    min: 10
-};
-let time = vars.min * 60;
-let domSelect = {
-    cards: document.querySelectorAll(".card"),
-    timer: document.getElementById("time-left"),
-    matches: document.getElementById("matches"),
-    directions: document.getElementById("directions")
-};
 
-function shuffleCards () {
-    //set imgs to different card ids 
-}
-
-function gameTimer() {
-    let myInterval = setInterval(timer, 1000);
-    function timer() {
-        let minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-        if (seconds < 10) {seconds = "0" + seconds};
-        if (time === 0) {
-            clearInterval(myInterval);
-            domSelect.directions.innerHTML = "Time is up, you lost";
-        };
-        if (vars.matches === 8) {
-            clearInterval(myInterval);
-            domSelect.directions.innerHTML = "Congratulations, you won!";
-        }
-        domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
-        time--;
+    let vars = {
+        firstSelect: "null",
+        secondSelect: "null",
+        clicks: 0,
+        matches: 0,
+        curCards: [],
+        min: 10
     };
-};
+    let time = vars.min * 60;
+    const domSelect = {
+        cards: document.querySelectorAll(".card"),
+        timer: document.getElementById("time-left"),
+        matches: document.getElementById("matches"),
+        directions: document.getElementById("directions"),
+        button: document.getElementById("play-again")
+    };
+
+    function shuffleCards () {
+    //set imgs to different card ids 
+    };
+
+    function gameTimer() {
+        let myInterval = setInterval(timer, 1000);
+        function timer() {
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            if (seconds < 10) {seconds = "0" + seconds};
+            if (time === 0) {
+                clearInterval(myInterval);
+                domSelect.directions.innerHTML = "Time is up, you lost";
+            };
+            if (vars.matches === 8) {
+                clearInterval(myInterval);
+                domSelect.directions.innerHTML = "Congratulations, you won!";
+            }
+            domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
+            time--;
+        };
+    };
 
 
     domSelect.cards.forEach(function(card) {
@@ -66,36 +68,25 @@ function gameTimer() {
     });
 
 
-function checkMatch () {
-    if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
-        vars.matches = vars.matches + 1;
-        domSelect.matches.innerHTML = ("Matches: " + vars.matches);
-    } else {
-        setTimeout (function () { //on timer (3sec), flip cards back over
-            vars.curCards.forEach(function(card) {
-                let currentCard = document.getElementById(card);
-                currentCard.classList.toggle('flipped');
-            })
-    }, 2500);
+    function checkMatch () {
+        if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
+            vars.matches = vars.matches + 1;
+            domSelect.matches.innerHTML = ("Matches: " + vars.matches);
+        } else {
+            setTimeout (function () { //on timer (3sec), flip cards back over
+                vars.curCards.forEach(function(card) {
+                    let currentCard = document.getElementById(card);
+                    currentCard.classList.toggle('flipped');
+                })
+        }, 2500);
+        };
+        vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
+        vars.secondSelect = "null";
+        setTimeout(function(){vars.curCards = []}, 2501); //clears current card array after timed flip executes
     };
-    vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
-    vars.secondSelect = "null";
-    setTimeout(function(){vars.curCards = []}, 2501); //clears current card array after timed flip executes
+
 };
-
-//if match = 8 run endGame function 
-function winGame () {
-    //end timer
-    //set "you won" message DOM
-}
-
-//if timer runs out 
-//remove event listener from all cards... disable on click function??
 
 function startOVer () {
     //event listener to button
 }
-
-
-
-};
