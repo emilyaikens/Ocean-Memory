@@ -31,24 +31,31 @@ function clickCard () {
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
                 vars.secondSelect = card.firstElementChild.innerHTML;
                 //console.log("second click")
+                checkMatch();
             } else {
                 vars.firstSelect = card.firstElementChild.innerHTML;
                 //console.log("first click")
             };
             //remove event listener for this card??
-            console.log(vars.clicks + " clicks");
-            console.log(vars.firstSelect + " first");
-            console.log(vars.secondSelect + " second");
+            //console.log(vars.clicks + " clicks");
+            //console.log(vars.firstSelect + " first");
+            //console.log(vars.secondSelect + " second");
         })
     });
 };
 
-//if click count %2 then checkMatch function
 function checkMatch () {
-    //if firstSelect === secondSelect update match's +1
-    // reset firstSelect and secondSelect to "null"
-    //on timer (3sec), fliop cards back over
-}
+    if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
+        vars.matches = vars.matches + 1;
+    };
+    vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
+    vars.secondSelect = "null";
+    setTimeout(function() { //on timer (3sec), flip cards back over
+        domSelect.cards.forEach(function(card) {
+            card.classList.toggle('flipped')
+        })
+    }, 3000);
+};
 
 //if match = 8 run endGame function 
 function endGame () {
