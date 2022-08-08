@@ -3,7 +3,8 @@ let vars = {
     secondSelect: "null",
     clicks: 0,
     matches: 0,
-    curCards: []
+    curCards: [],
+    min: 10
 };
 let domSelect = {
     cards: document.querySelectorAll(".card"),
@@ -16,9 +17,22 @@ function shuffleCards () {
     //set imgs to different card ids 
 }
 
-function startTimer () {
-    //timer function
-}
+
+if (vars.clicks === 1) { //if clicks === 1, start timer
+    let time = vars.min * 60;
+    setInterval(timer, 1000);
+    function timer() {
+        let minutes = Math.floor(vars.time / 60);
+        let seconds = vars.time % 60;
+        if (seconds > 10) {
+            seconds = "0" + seconds
+        };
+        domSelect.timer.innerHTML = ("Time left: " + minutes + ":" + seconds);
+        vars.time--;
+    };
+};
+
+
 
 clickCard();
 
@@ -29,8 +43,6 @@ function clickCard () {
             vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
             vars.curCards.push(card.id); //push id of clicked card into curCards array
             //console.log(vars.curCards);
-            if (vars.clicks === 1) {startTimer();//if clicks === 1, startTimer function
-            };
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
                 vars.secondSelect = card.firstElementChild.innerHTML;
                 //console.log("second click")
