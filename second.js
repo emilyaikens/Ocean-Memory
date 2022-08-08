@@ -8,7 +8,8 @@ function initiate() {
         clicks: 0,
         matches: 0,
         curCards: [],
-        min: 10
+        min: 10,
+        cardImages: ["photos/octopus.png"]
     };
     let time = vars.min * 60;
     const domSelect = {
