@@ -1,3 +1,6 @@
+initiate();
+
+function initiate() {
 let vars = {
     firstSelect: "null",
     secondSelect: "null",
@@ -6,6 +9,7 @@ let vars = {
     curCards: [],
     min: 10
 };
+let time = vars.min * 60;
 let domSelect = {
     cards: document.querySelectorAll(".card"),
     timer: document.getElementById("time-left"),
@@ -17,8 +21,7 @@ function shuffleCards () {
     //set imgs to different card ids 
 }
 
-let time = vars.min * 60;
-function startTimer() {
+function gameTimer() {
     let myInterval = setInterval(timer, 1000);
     function timer() {
         let minutes = Math.floor(time / 60);
@@ -28,14 +31,16 @@ function startTimer() {
             clearInterval(myInterval);
             domSelect.directions.innerHTML = "Time is up, you lost";
         };
+        if (vars.matches === 8) {
+            clearInterval(myInterval);
+            domSelect.directions.innerHTML = "Congratulations, you won!";
+        }
         domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
         time--;
     };
 };
 
-clickCard();
 
-function clickCard () {
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function clickCard() {
             card.classList.toggle('flipped');  //flip cards
@@ -55,11 +60,11 @@ function clickCard () {
             //console.log(vars.firstSelect + " first");
             //console.log(vars.secondSelect + " second");
             //console.log(vars.clicks);
-            if (vars.clicks === 1) {startTimer()}; //if clicks === 1, start timer
+            if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
             card.removeEventListener('click', clickCard); //FIX THIS
         });
     });
-};
+
 
 function checkMatch () {
     if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
@@ -79,15 +84,18 @@ function checkMatch () {
 };
 
 //if match = 8 run endGame function 
-function endGame () {
+function winGame () {
     //end timer
     //set "you won" message DOM
 }
 
 //if timer runs out 
-//set "you lost" message DOM 
 //remove event listener from all cards... disable on click function??
 
 function startOVer () {
     //event listener to button
 }
+
+
+
+};
