@@ -19,19 +19,24 @@ function startTimer () {
     //timer function
 }
 
-domSelect.cards.forEach(card =>
-    card.addEventListener('click', clickCard) 
-);
+clickCard();
 
-//on click
-function clickCard (card) {
-    card.classList.toggle('flipped'); //flip card, show back (cardFlip function)
-    //count clicks (clicks +1)
-    //if clicks === 1, startTimer function
-    //if clicks !%2 set firstSelect
-    //else set secondSelect
-    //remove event listener for this card
-}
+function clickCard () {
+    domSelect.cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            card.classList.toggle('flipped');  //flip cards
+            vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
+            if (vars.clicks === 1) {startTimer();//if clicks === 1, startTimer function
+            };
+            if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
+                secondSelect = card.parentElement.children[1].innerHTML
+            } else {
+                firstSelect = card.parentElement.children[1].innerHTML
+            };
+            //remove event listener for this card??
+        })
+    });
+};
 
 //if click count %2 then checkMatch function
 function checkMatch () {
