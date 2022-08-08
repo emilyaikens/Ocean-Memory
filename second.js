@@ -2,10 +2,11 @@ let vars = {
     firstSelect: "null",
     secondSelect: "null",
     clicks: 0,
-    matches: 0
+    matches: 0,
+    curCards: []
 };
 let domSelect = {
-    cards: document.querySelectorAll('.card'),
+    cards: document.querySelectorAll(".card"),
     timer: document.getElementById("time-left"),
     matches: document.getElementById("matches"),
     directions: document.getElementById("directions")
@@ -26,6 +27,8 @@ function clickCard () {
         card.addEventListener('click', function() {
             card.classList.toggle('flipped');  //flip cards
             vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
+            vars.curCards.push(card.id); //push id of clicked card into curCards array
+            //console.log(vars.curCards);
             if (vars.clicks === 1) {startTimer();//if clicks === 1, startTimer function
             };
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
@@ -47,14 +50,17 @@ function clickCard () {
 function checkMatch () {
     if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
         vars.matches = vars.matches + 1;
+        domSelect.matches.innerHTML = ("Matches: " + vars.matches);
+    } else {
+        setTimeout (function () { //on timer (3sec), flip cards back over
+            vars.curCards.forEach(function(card) {
+                let currentCard = document.getElementById(card);
+                currentCard.classList.toggle('flipped');
+            })
+    }, 3000);
     };
     vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
     vars.secondSelect = "null";
-    setTimeout(function() { //on timer (3sec), flip cards back over
-        domSelect.cards.forEach(function(card) {
-            card.classList.toggle('flipped')
-        })
-    }, 3000);
 };
 
 //if match = 8 run endGame function 
