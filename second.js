@@ -24,16 +24,16 @@ function initiate() {
     };
 
     function gameTimer() {
-        let myInterval = setInterval(timer, 1000);
+        let myInterval = setInterval(timer, 1000); // one second interval
         function timer() {
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            if (seconds < 10) {seconds = "0" + seconds};
-            if (time === 0) {
+            let minutes = Math.floor(time / 60); // minutes will be rounded to the lowest minute
+            let seconds = time % 60; // seconds will be the remainder of total/60
+            if (seconds < 10) {seconds = "0" + seconds}; // formats 9:9 to 9:09
+            if (time === 0) { //when the timer reaches zero, turn it off and display lose message
                 clearInterval(myInterval);
                 domSelect.directions.innerHTML = "Time is up, you lost";
             };
-            if (vars.matches === 8) {
+            if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
                 clearInterval(myInterval);
                 domSelect.directions.innerHTML = "Congratulations, you won!";
             }
@@ -41,7 +41,6 @@ function initiate() {
             time--;
         };
     };
-
 
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function clickCard() {
