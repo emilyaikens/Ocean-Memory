@@ -3,7 +3,13 @@ let vars = {
     secondSelect: "null",
     clicks: 0,
     matches: 0
-}
+};
+let domSelect = {
+    cards: document.querySelectorAll('.card'),
+    timer: document.getElementById("time-left"),
+    matches: document.getElementById("matches"),
+    directions: document.getElementById("directions")
+};
 
 function shuffleCards () {
     //set imgs to different card ids 
@@ -13,14 +19,18 @@ function startTimer () {
     //timer function
 }
 
+domSelect.cards.forEach(card =>
+    card.addEventListener('click', clickCard) 
+);
+
 //on click
-function clickCard () {
-    //if clicks === 1, startTimer function
-    //flip card, show back (cardFlip function)
-    //remove event listener for this card
+function clickCard (card) {
+    card.classList.toggle('flipped'); //flip card, show back (cardFlip function)
     //count clicks (clicks +1)
+    //if clicks === 1, startTimer function
     //if clicks !%2 set firstSelect
     //else set secondSelect
+    //remove event listener for this card
 }
 
 //if click count %2 then checkMatch function
