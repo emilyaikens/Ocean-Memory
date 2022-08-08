@@ -9,7 +9,16 @@ function initiate() {
         matches: 0,
         curCards: [],
         min: 10,
-        cardImages: ["images/octopus.png"]
+        cardImages: [
+            "images/fish.png",
+            "images/clam.png",
+            "images/octopus.png",
+            "images/jelly.png",
+            "images/narwal.png",
+            "images/ray.png",
+            "images/squid.png",
+            "images/star.png"
+        ]
     };
     let time = vars.min * 60;
     const domSelect = {
