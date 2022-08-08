@@ -29,11 +29,16 @@ function clickCard () {
             if (vars.clicks === 1) {startTimer();//if clicks === 1, startTimer function
             };
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
-                secondSelect = card.parentElement.children[1].innerHTML
+                vars.secondSelect = card.firstElementChild.innerHTML;
+                //console.log("second click")
             } else {
-                firstSelect = card.parentElement.children[1].innerHTML
+                vars.firstSelect = card.firstElementChild.innerHTML;
+                //console.log("first click")
             };
             //remove event listener for this card??
+            console.log(vars.clicks + " clicks");
+            console.log(vars.firstSelect + " first");
+            console.log(vars.secondSelect + " second");
         })
     });
 };

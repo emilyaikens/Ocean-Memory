@@ -9,7 +9,6 @@ let gameVars = {
     clicks: 0,
     firstSelect: "null",
     secondSelect: "null",
-    currentCards: [],
 };
 if (gameVars.totalClicks === 1) {
     //start timer
