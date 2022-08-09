@@ -30,7 +30,20 @@ function initiate() {
     };
 
 
-    //function shuffleCards () { //set imgs to different card ids 
+let randomId = [];
+for (let i=0; i<16; i++) {
+    let randomNumber = Math.floor(Math.random() * 16);
+    if (!randomId.includes.randomNumber) {
+        randomId.push(randomNumber);
+    }
+};
+
+console.log(randomId);
+   
+//function shuffleCards () { //set imgs to different card ids 
+        vars.cardImages.forEach(function(image) {
+            
+        })
         document.getElementById("1").innerHTML = `<img src="images/jelly.png">`
     //};
 
