@@ -9,8 +9,8 @@ function initiate() {
         matches: 0,
         curCards: [],
         min: 10,
-        cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
-        cardIds: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+        cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png",
+                    "images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
     };
     let time = vars.min * 60;
     const domSelect = {
@@ -32,16 +32,16 @@ function initiate() {
         }
         return array;
       }
-    vars.cardIds = shuffleId(vars.cardIds);
+    shuffleId(vars.cardImages);
+    console.log(vars.cardImages);
    
-//function shuffleCards () { //set imgs to different card ids 
-         
-    vars.cardIds.forEach(function (id) {   
-        vars.cardImages.forEach(function(image) {
-            document.getElementById(id).innerHTML = `<img src=${image}>`
-        });
-    });
-//};
+    //function shuffleCards () { //set imgs to different cards     
+     for (let i = 1; i < 17; i++) {
+        let inner = vars.cardImages[i];
+        console.log(inner);
+        //document.getElementById(i).appendChild(backSide);
+        };
+         console.log(document.getElementById("1"));
 
     function gameTimer() {
         let myInterval = setInterval(timer, 1000); // one second interval
@@ -67,25 +67,16 @@ function initiate() {
             card.classList.toggle('flipped');  //flip cards
             vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
             vars.curCards.push(card.id); //push id of clicked card into curCards array
-            //console.log(vars.curCards);
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
                 vars.secondSelect = card.firstElementChild.innerHTML;
-                //console.log("second click")
                 checkMatch();
             } else {
                 vars.firstSelect = card.firstElementChild.innerHTML;
-                //console.log("first click")
             };
-            //remove event listener for this card??
-            //console.log(vars.clicks + " clicks");
-            //console.log(vars.firstSelect + " first");
-            //console.log(vars.secondSelect + " second");
-            //console.log(vars.clicks);
             if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
             //card.removeEventListener('click', clickCard); //FIX THIS
         });
     });
-
 
     function checkMatch () {
         if (vars.firstSelect === vars.secondSelect) { //if firstSelect === secondSelect update match's +1
