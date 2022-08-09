@@ -18,44 +18,8 @@
         button: document.getElementById("play-again")
     };
 
-    function shuffleId(array) {
-        let currentId = array.length;
-        let randomId;
-        while (currentId != 0) { //for as long as the array length is less than 0
-          randomId = Math.floor(Math.random() * currentId); 
-          currentId--; // subdract one at a time
-          [array[currentId], array[randomId]] = [ //swap current array for random array
-            array[randomId], array[currentId]];
-        }
-        return array;
-      }
     shuffleId(vars.cardImages);
-   
-    //function shuffleCards () { //set imgs to different cards     
-     for (let i = 0; i < 16; i++) {
-        const img = document.createElement("img");
-        img.src = vars.cardImages[i];
-        document.getElementById(i).appendChild(img);
-        };
-
-    function gameTimer() {
-        let myInterval = setInterval(timer, 1000); // one second interval
-        function timer() {
-            let minutes = Math.floor(time / 60); // minutes will be rounded to the lowest minute
-            let seconds = time % 60; // seconds will be the remainder of total/60
-            if (seconds < 10) {seconds = "0" + seconds}; // formats 9:9 to 9:09
-            if (time === 0) { //when the timer reaches zero, turn it off and display lose message
-                clearInterval(myInterval);
-                domSelect.directions.innerHTML = "Time is up, you lost";
-            };
-            if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
-                clearInterval(myInterval);
-                domSelect.directions.innerHTML = "Congratulations, you won!";
-            }
-            domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
-            time--;
-        };
-    };
+    setCards();
 
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function clickCard() {
@@ -90,6 +54,46 @@
         setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
     };
    
+    function shuffleId(array) {
+        let currentId = array.length;
+        let randomId;
+        while (currentId != 0) { //for as long as the array length is less than 0
+          randomId = Math.floor(Math.random() * currentId); 
+          currentId--; // subdract one at a time
+          [array[currentId], array[randomId]] = [ //swap current array for random array
+            array[randomId], array[currentId]];
+        }
+        return array;
+      };
+
+    //function shuffleCards () { //set imgs to different cards 
+    function setCards () {        
+        for (let i = 0; i < 16; i++) {
+           const img = document.createElement("img");
+           img.src = vars.cardImages[i];
+           document.getElementById(i).appendChild(img);
+           };
+   };
+   
+   function gameTimer() {
+    let myInterval = setInterval(timer, 1000); // one second interval
+    function timer() {
+        let minutes = Math.floor(time / 60); // minutes will be rounded to the lowest minute
+        let seconds = time % 60; // seconds will be the remainder of total/60
+        if (seconds < 10) {seconds = "0" + seconds}; // formats 9:9 to 9:09
+        if (time === 0) { //when the timer reaches zero, turn it off and display lose message
+            clearInterval(myInterval);
+            domSelect.directions.innerHTML = "Time is up, you lost";
+        };
+        if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
+            clearInterval(myInterval);
+            domSelect.directions.innerHTML = "Congratulations, you won!";
+        }
+        domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
+        time--;
+    };
+};
+
     domSelect.button.addEventListener("click", function() { //reload game
         location.reload();
     });
