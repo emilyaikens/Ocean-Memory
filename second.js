@@ -64,15 +64,12 @@
             vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
                 vars.secondSelect = card.firstElementChild.innerHTML;
-                console.log("second select " + vars.secondSelect);
                 checkMatch();
             } else {
                 vars.firstSelect = card.firstElementChild.innerHTML;
-                console.log("first select " + vars.firstSelect);
             };
             if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
             //card.removeEventListener('click', clickCard); //FIX THIS
-            console.log(vars.curCards);
         });
     });
 
