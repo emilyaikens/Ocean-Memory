@@ -85,7 +85,7 @@ img {
     column-gap: 5px;
     margin: 20px
 }
-button {
+#play-again {
     border: solid #677381;
     margin: 10px 0px 100px 0px;
     padding: 10px;
@@ -94,6 +94,6 @@ button {
     letter-spacing: 2px;
     color: #4B4A54;
 }
-button:hover {
+#play-again:hover {
     background: #ffcdd2;
 }

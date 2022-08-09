@@ -15,7 +15,7 @@
         timer: document.getElementById("time-left"),
         matches: document.getElementById("matches"),
         directions: document.getElementById("directions"),
-        button: document.getElementById("play-again")
+        resetButton: document.getElementById("play-again")
     };
 
     shuffleId(vars.cardImages);
@@ -96,6 +96,6 @@
     };
 };
 
-    domSelect.button.addEventListener("click", function() { //reload game
+    domSelect.resetButton.addEventListener("click", function() { //reload game
         location.reload();
     });
