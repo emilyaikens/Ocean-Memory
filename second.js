@@ -23,17 +23,18 @@
 
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function clickCard() {
-            card.classList.toggle('flipped');  //flip cards
-            vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
-            vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
-            if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
-                vars.secondSelect = card.firstElementChild.innerHTML;
-                checkMatch();
-            } else {
-                vars.firstSelect = card.firstElementChild.innerHTML;
+            if (vars.curCards.includes(card.firstElementChild.id) === false) { //everything under this line only happens if the card hasn't already been clicked
+                card.classList.toggle('flipped');  //flip cards
+                vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
+                vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
+                if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
+                    vars.secondSelect = card.firstElementChild.innerHTML;
+                    checkMatch();
+                } else {
+                    vars.firstSelect = card.firstElementChild.innerHTML;
+                };
+                if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
             };
-            if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
-            //card.removeEventListener('click', clickCard); //FIX THIS
         });
     });
 
@@ -74,7 +75,7 @@
            document.getElementById(i).appendChild(img);
            };
    };
-   
+
    function gameTimer() {
     let myInterval = setInterval(timer, 1000); // one second interval
     function timer() {
