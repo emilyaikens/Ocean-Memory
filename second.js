@@ -1,6 +1,3 @@
-initiate();
-
-function initiate() {
 
     let vars = {
         firstSelect: "null",
@@ -95,9 +92,7 @@ function initiate() {
         vars.secondSelect = "null";
         setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
     };
-
-};
-
-function playAgain () {
-    domSelect.button.addEventListener("click", initiate());
-};
+   
+    domSelect.button.addEventListener("click", function() { //reload game
+        location.reload();
+    });
