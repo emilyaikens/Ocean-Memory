@@ -31,11 +31,11 @@ function initiate() {
 
 
 let randomId = [];
-for (let i=0; i<16; i++) {
+while (randomId.length < 17) {
     let randomNumber = Math.floor(Math.random() * 16);
-    if (!randomId.includes.randomNumber) {
+    if (randomId.includes(randomNumber) === false) {
         randomId.push(randomNumber);
-    }
+    };
 };
 
 console.log(randomId);
