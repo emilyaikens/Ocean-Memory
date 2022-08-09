@@ -14,24 +14,30 @@ body {
 h1 {
     letter-spacing: 12px;
     font-size: 45px;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 20px 10px 20px;
     color: #677381;
 }
 #more-directions {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    margin: 20px 110px;
+    margin: 0 auto;
+    width: 360px;
+    padding: 0px 0px 20px 0px;
 }
 .score-board {
     border: solid #677381;
-    margin: 30px 150px 20px 150px;
+    margin: 0 auto;
+    width: 230px;
     background-color: #D9E5E0;
 }
 #time-left {
-    padding: 5px
+    padding: 5px;
 }
 #matches {
     padding: 0px 0px 5px 0px;
+}
+#directions {
+    padding: 20px 0px 5px 0px
 }
 .card {
     width: 100px;

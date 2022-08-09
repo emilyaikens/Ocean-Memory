@@ -5,7 +5,7 @@
         clicks: 0,
         matches: 0,
         curCards: [],
-        min: 5,
+        min: 1,
         cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png",
                     "images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
     };
@@ -85,7 +85,7 @@
         if (time === 0) { //when the timer reaches zero, turn it off and display lose message
             clearInterval(myInterval);
             domSelect.directions.innerHTML = "Time is up, you lost";
-            document.querySelector(".score-board").style.color = "#ffcdd2";
+            document.querySelector(".score-board").style.backgroundColor = "#ffcdd2";
         };
         if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
             clearInterval(myInterval);
