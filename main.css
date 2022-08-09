@@ -8,17 +8,20 @@ body {
     text-align: center;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
+    color: #4B4A54;
+    background-color: #E8F3F1;
 }
 h1 {
     letter-spacing: 12px;
     font-size: 45px;
-    margin: 20px;
+    margin: 20px 20px 20px 40px;
+    color: #677381;
 }
 .score-board {
-    border: solid black;
+    border: solid #677381;
     width: 200px;
-    margin: 30px 0px 20px 225px;
-
+    margin: 30px 0px 20px 210px;
+    background-color: #D9E5E0;
 }
 #time-left {
     padding: 5px
@@ -31,8 +34,7 @@ h1 {
     height: 100px;
     transform-style: preserve-3d;
     position: relative;
-    cursor: grab; /* can change this to a hover thing later*/
-    border: black solid;
+    border: #677381 solid;
 }
 img {
     height: 100px;
@@ -50,11 +52,13 @@ img {
 .card-back {
     transform: rotateY(180deg);
     user-select: none;
-    background-color: pink;
 }
 .card-front {
-    background-color: lightblue;
+    background-color: #A3CFCD;
     text-transform: uppercase;
+}
+.card-front:hover {
+    background-color: #82A0AA;
 }
 .flipped .card-front {
     transform: rotateY(180deg);
@@ -75,5 +79,5 @@ img {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     width: 350px;
-    margin-left: 155px;
+    margin-left: 140px;
 }
