@@ -79,3 +79,15 @@ img {
     column-gap: 5px;
     margin: 20px
 }
+button {
+    border: solid #677381;
+    margin: 10px 0px 100px 0px;
+    padding: 10px;
+    background-color: #D9E5E0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+}
+button:hover {
+    background: #ffcdd2;
+}
