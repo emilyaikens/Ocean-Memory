@@ -33,7 +33,6 @@ function initiate() {
         return array;
       }
     shuffleId(vars.cardImages);
-    console.log(vars.cardImages);
    
     //function shuffleCards () { //set imgs to different cards     
      for (let i = 0; i < 16; i++) {
@@ -65,15 +64,18 @@ function initiate() {
         card.addEventListener('click', function clickCard() {
             card.classList.toggle('flipped');  //flip cards
             vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
-            vars.curCards.push(card.id); //push id of clicked card into curCards array
+            vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
             if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
                 vars.secondSelect = card.firstElementChild.innerHTML;
+                console.log("second select " + vars.secondSelect);
                 checkMatch();
             } else {
                 vars.firstSelect = card.firstElementChild.innerHTML;
+                console.log("first select " + vars.firstSelect);
             };
             if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
             //card.removeEventListener('click', clickCard); //FIX THIS
+            console.log(vars.curCards);
         });
     });
 
@@ -85,17 +87,17 @@ function initiate() {
             setTimeout (function () { //on timer (3sec), flip cards back over
                 vars.curCards.forEach(function(card) {
                     let currentCard = document.getElementById(card);
-                    currentCard.classList.toggle('flipped');
+                    currentCard.parentElement.classList.toggle('flipped');
                 })
-        }, 2500);
+        }, 1500);
         };
         vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
         vars.secondSelect = "null";
-        setTimeout(function(){vars.curCards = []}, 2501); //clears current card array after timed flip executes
+        setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
     };
 
 };
 
-function startOVer () {
-    //event listener to button
-}
+function playAgain () {
+    domSelect.button.addEventListener("click", initiate());
+};
