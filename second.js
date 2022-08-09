@@ -9,16 +9,8 @@ function initiate() {
         matches: 0,
         curCards: [],
         min: 10,
-        cardImages: [
-            "images/fish.png",
-            "images/clam.png",
-            "images/octopus.png",
-            "images/jelly.png",
-            "images/narwal.png",
-            "images/ray.png",
-            "images/squid.png",
-            "images/star.png"
-        ]
+        cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
+        cardIds: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
     };
     let time = vars.min * 60;
     const domSelect = {
@@ -29,25 +21,27 @@ function initiate() {
         button: document.getElementById("play-again")
     };
 
-
-// let randomArray = [];
-// let randomId = "null";
- 
-//     do {
-//       randomId = Math.floor(Math.random() * 16);
-//     if (randomArray.includes(randomId) === false) {
-//         randomArray.push(randomId);
-//     };
-// } while (randomArray.length < 17);
-
-console.log(randomArray);
+    function shuffleId(array) {
+        let currentId = array.length;
+        let randomId;
+        while (currentId != 0) {
+          randomId = Math.floor(Math.random() * currentId);
+          currentId--;
+          [array[currentId], array[randomId]] = [
+            array[randomId], array[currentId]];
+        }
+        return array;
+      }
+    vars.cardIds = shuffleId(vars.cardIds);
    
 //function shuffleCards () { //set imgs to different card ids 
+         
+    vars.cardIds.forEach(function (id) {   
         vars.cardImages.forEach(function(image) {
-            
-        })
-        document.getElementById("1").innerHTML = `<img src="images/jelly.png">`
-    //};
+            document.getElementById(id).innerHTML = `<img src=${image}>`
+        });
+    });
+//};
 
     function gameTimer() {
         let myInterval = setInterval(timer, 1000); // one second interval
