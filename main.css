@@ -14,13 +14,17 @@ body {
 h1 {
     letter-spacing: 12px;
     font-size: 45px;
-    margin: 20px 20px 20px 40px;
+    margin: 20px 20px 20px 20px;
     color: #677381;
+}
+#more-directions {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: 20px 110px;
 }
 .score-board {
     border: solid #677381;
-    width: 200px;
-    margin: 30px 0px 20px 210px;
+    margin: 30px 150px 20px 150px;
     background-color: #D9E5E0;
 }
 #time-left {
@@ -74,10 +78,4 @@ img {
     row-gap: 5px;
     column-gap: 5px;
     margin: 20px
-}
-#more-directions {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    width: 350px;
-    margin-left: 140px;
 }
