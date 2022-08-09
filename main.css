@@ -6,6 +6,25 @@ body {
     width: 100%;
     min-height: 100vh;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+h1 {
+    letter-spacing: 12px;
+    font-size: 45px;
+    margin: 20px;
+}
+.score-board {
+    border: solid black;
+    width: 200px;
+    margin: 30px 0px 20px 225px;
+
+}
+#time-left {
+    padding: 5px
+}
+#matches {
+    padding: 0px 0px 5px 0px;
 }
 .card {
     width: 100px;
@@ -13,7 +32,7 @@ body {
     transform-style: preserve-3d;
     position: relative;
     cursor: grab; /* can change this to a hover thing later*/
-    border: lightblue solid;
+    border: black solid;
 }
 img {
     height: 100px;
@@ -35,6 +54,7 @@ img {
 }
 .card-front {
     background-color: lightblue;
+    text-transform: uppercase;
 }
 .flipped .card-front {
     transform: rotateY(180deg);
@@ -47,6 +67,13 @@ img {
     grid-template-columns: repeat(4, auto);
     justify-content: center;
     align-content: center;
-    row-gap: 3px;
-    column-gap: 3px;
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 20px
+}
+#more-directions {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    width: 350px;
+    margin-left: 155px;
 }
