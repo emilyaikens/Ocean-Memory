@@ -30,15 +30,17 @@ function initiate() {
     };
 
 
-let randomId = [];
-while (randomId.length < 17) {
-    let randomNumber = Math.floor(Math.random() * 16);
-    if (randomId.includes(randomNumber) === false) {
-        randomId.push(randomNumber);
-    };
-};
+// let randomArray = [];
+// let randomId = "null";
+ 
+//     do {
+//       randomId = Math.floor(Math.random() * 16);
+//     if (randomArray.includes(randomId) === false) {
+//         randomArray.push(randomId);
+//     };
+// } while (randomArray.length < 17);
 
-console.log(randomId);
+console.log(randomArray);
    
 //function shuffleCards () { //set imgs to different card ids 
         vars.cardImages.forEach(function(image) {
