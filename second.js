@@ -24,10 +24,10 @@ function initiate() {
     function shuffleId(array) {
         let currentId = array.length;
         let randomId;
-        while (currentId != 0) {
-          randomId = Math.floor(Math.random() * currentId);
-          currentId--;
-          [array[currentId], array[randomId]] = [
+        while (currentId != 0) { //for as long as the array length is less than 0
+          randomId = Math.floor(Math.random() * currentId); 
+          currentId--; // subdract one at a time
+          [array[currentId], array[randomId]] = [ //swap current array for random array
             array[randomId], array[currentId]];
         }
         return array;
@@ -36,12 +36,11 @@ function initiate() {
     console.log(vars.cardImages);
    
     //function shuffleCards () { //set imgs to different cards     
-     for (let i = 1; i < 17; i++) {
-        let inner = vars.cardImages[i];
-        console.log(inner);
-        //document.getElementById(i).appendChild(backSide);
+     for (let i = 0; i < 16; i++) {
+        const img = document.createElement("img");
+        img.src = vars.cardImages[i];
+        document.getElementById(i).appendChild(img);
         };
-         console.log(document.getElementById("1"));
 
     function gameTimer() {
         let myInterval = setInterval(timer, 1000); // one second interval
