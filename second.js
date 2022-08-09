@@ -5,7 +5,7 @@
         clicks: 0,
         matches: 0,
         curCards: [],
-        min: 1,
+        min: 5,
         cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png",
                     "images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
     };
@@ -99,3 +99,10 @@
     domSelect.resetButton.addEventListener("click", function() { //reload game
         location.reload();
     });
+
+function biggerBoard () {
+    //increase board size to 6x6
+    //add 10 new images to card images array
+    //update setCards array so that the iteration length is the length of cardImages array
+    //update timer to 10 minutes
+};
