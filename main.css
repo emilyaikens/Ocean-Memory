@@ -14,7 +14,7 @@ body {
 h1 {
     letter-spacing: 12px;
     font-size: 45px;
-    margin: 20px 20px 10px 20px;
+    margin: 30px 20px 10px 20px;
     color: #677381;
 }
 #more-directions {
@@ -87,7 +87,7 @@ img {
 }
 #play-again {
     border: solid #677381;
-    margin: 10px 0px 100px 0px;
+    margin: 10px 0px 50px 0px;
     padding: 10px;
     background-color: #D9E5E0;
     font-family: 'Oswald', sans-serif;
@@ -107,3 +107,20 @@ img {
 .wiggle {
   animation: wiggle 1.5s;
 }
+#top, #bottom, #left, #right {
+	background: #A3CFCD;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 15px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 15px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
