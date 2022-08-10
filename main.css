@@ -105,5 +105,5 @@ img {
   100% { transform: rotate(0deg); }
 }
 .wiggle {
-  animation: wiggle 2.5s;
+  animation: wiggle 1.5s;
 }

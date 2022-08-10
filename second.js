@@ -47,7 +47,7 @@ function checkMatch () {
         setTimeout (function () { //on timer (3sec), flip cards back over
             vars.curCards.forEach(function(card) { //for each of the current cards...
                 let currentCard = document.getElementById(card); //...get their id
-                currentCard.parentElement.classList.toggle('flipped');// ...use that id to change the flipped class
+                currentCard.parentElement.classList.toggle("flipped");// ...use that id to change the flipped class
             })
     }, 1500);
     };
@@ -90,17 +90,17 @@ function gameTimer() {
         };
         if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
             clearInterval(myInterval);
-            playerWin();
+            playerWin(domSelect.directions);
         };
         domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
         time--; //update timer visual
     };
 };
 
-function playerWin() {
-    domSelect.directions.innerHTML = "Congratulations, you won!";
-    domSelect.directions.style.textTransform = "uppercase";
-    /// add class "wiggle" to the directions 
+function playerWin(element) { //DOM updates to directions
+    element.innerHTML = "Congratulations, you won!";
+    element.style.textTransform = "uppercase";
+    element.classList.add("wiggle"); // add class "wiggle" to the directions 
 };
 
 domSelect.resetButton.addEventListener("click", function() { //reload game
