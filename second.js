@@ -23,7 +23,8 @@
 
     domSelect.cards.forEach(function(card) {
         card.addEventListener('click', function clickCard() {
-            if (vars.curCards.includes(card.firstElementChild.id) === false) { //everything under this line only happens if the card hasn't already been clicked
+            if ((vars.curCards.includes(card.firstElementChild.id) === false) &&
+                    (vars.curCards.length < 2)) { //everything under this line only happens if the card hasn't already been clicked
                 card.classList.toggle('flipped');  //flip cards
                 vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
                 vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
