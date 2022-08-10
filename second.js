@@ -3,7 +3,7 @@
         firstSelect: "null",
         secondSelect: "null",
         clicks: 0,
-        matches: 0,
+        matches: 8,
         curCards: [],
         min: 5,
         cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png",
@@ -89,11 +89,16 @@
         };
         if (vars.matches === 8) { //if player get 8 matches, turn off timer and display win message
             clearInterval(myInterval);
-            domSelect.directions.innerHTML = "Congratulations, you won!";
-        }
+            playerWin();
+        };
         domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
         time--; //update timer visual
     };
+    };
+
+    function playerWin() {
+        domSelect.directions.innerHTML = "Congratulations, you won!";
+        domSelect.directions.style.textTransform = "uppercase";
     };
 
     domSelect.resetButton.addEventListener("click", function() { //reload game
