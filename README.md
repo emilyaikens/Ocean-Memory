@@ -8,6 +8,10 @@ Technologies Used:
     - CSS
     - JavaScript
 
+![alt text](images/startscreen.png)
+![alt text](images/playscreen.png)
+![alt text](images/winscreen.png)
+
 Getting Started: 
     - Link to game: 
     - Instructions: Click on a card to flip it over. Each card has a double somewhere else on the board - try to find it! To win, you must find all of the matches within the time limit. Keep in mind, you can only flip over two cards at a time!
