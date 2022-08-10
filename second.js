@@ -6,8 +6,8 @@ let vars = {
     matches: 0, //counts total matches throughout the game
     curCards: [], //used to log the innerHTML of the cards, two at a time
     min: 5, //how many minutes of game play
-    cardImages: ["images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png",
-                "images/fish.png","images/clam.png","images/octopus.png","images/jelly.png","images/narwal.png","images/ray.png","images/squid.png","images/star.png"],
+    cardImages: ["images/eumicrotremus.jpg","images/hemigrapsus.jpg","images/balanus.png","images/fucus.jpg","images/gruntsculpin.jpeg","images/apodichthys.jpg","images/abalone.png","images/strongylocentrotus.jpg",
+    "images/eumicrotremus.jpg","images/hemigrapsus.jpg","images/balanus.png","images/fucus.jpg","images/gruntsculpin.jpeg","images/apodichthys.jpg","images/abalone.png","images/strongylocentrotus.jpg"]
 };
 
 const domSelect = {
