@@ -65,16 +65,15 @@
             array[randomId], array[currentId]];
         }
         return array;
-      };
+    };
 
-    //function shuffleCards () { //set imgs to different cards 
     function setCards () {        
         for (let i = 0; i < 16; i++) {
-           const img = document.createElement("img");
-           img.src = vars.cardImages[i];
-           document.getElementById(i).appendChild(img);
+           const img = document.createElement("img"); //create a new image div
+           img.src = vars.cardImages[i]; //image source is an image from image array
+           document.getElementById(i).appendChild(img); //add new image div to card parent
            };
-   };
+    };
 
    function gameTimer() {
     let myInterval = setInterval(timer, 1000); // one second interval
@@ -92,9 +91,9 @@
             domSelect.directions.innerHTML = "Congratulations, you won!";
         }
         domSelect.timer.innerHTML = ("Time Left: " + minutes + ":" + seconds);
-        time--;
+        time--; //update timer visual
     };
-};
+    };
 
     domSelect.resetButton.addEventListener("click", function() { //reload game
         location.reload();
@@ -102,6 +101,16 @@
 
 function biggerBoard () {
     //increase board size to 6x6
+    for (let i = 16; i < 37; i++) {
+        let transcript = `
+        <div class="card">
+            <div class="card-back" id=${i}></div>
+            <div class="card-front"></div>
+        </div>
+        `
+        let newCard = document.createElement(transcript);
+        document.querySelector(".card-container").appendChild(newCard);
+    }
     //add 10 new images to card images array
     //update setCards array so that the iteration length is the length of cardImages array
     //update timer to 10 minutes
