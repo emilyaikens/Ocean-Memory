@@ -99,6 +99,7 @@
     function playerWin() {
         domSelect.directions.innerHTML = "Congratulations, you won!";
         domSelect.directions.style.textTransform = "uppercase";
+        /// add class "wiggle" to the directions 
     };
 
     domSelect.resetButton.addEventListener("click", function() { //reload game
