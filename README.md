@@ -1,7 +1,7 @@
 Project 1: Ocean Memory Game
 
 Description:
-    An online, ocean-themed memory game built for my first General Assembly Software Engineering Immersive project.
+    A simple ocean-themed memory game built for my first General Assembly Software Engineering Immersive project.
 
 Technologies Used: 
     - HTML
