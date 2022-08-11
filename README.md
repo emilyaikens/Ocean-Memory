@@ -8,7 +8,7 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 2. Include win/loss logic and render win/loss messages in HTML
 3. Include separate HTML, CSS, and JavaScript files
 4. Use vanilla JavaScript or jQuery
-5. All code should be properly indented
+5. All code should be properly indented and formatted
 6. No remaining dead or commented out code
 7. Code in a consistent manner
 8. Project should be deployed online using gitHub
@@ -37,6 +37,10 @@ Below: Mid-game
 ![alt text](images/playscreen.png)
 Below: Win screen
 ![alt text](images/winscreen.png)
+
+## Project Hurdles
+* Card flip - new for me
+* getting the cards to flip back over, because the timer, clear array before timer, set new timer. Coudln't be at the same time beause flip depends on array.
 
 ## Other sources: 
 
