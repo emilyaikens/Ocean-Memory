@@ -106,20 +106,3 @@ function playerWin(element) { //DOM updates to directions
 domSelect.resetButton.addEventListener("click", function() { //reload game
     location.reload();
 });
-
-function biggerBoard () {
-    //increase board size to 6x6
-    for (let i = 16; i < 37; i++) {
-        let transcript = `
-        <div class="card">
-            <div class="card-back" id=${i}></div>
-            <div class="card-front"></div>
-        </div>
-        `
-        let newCard = document.createElement(transcript);
-        document.querySelector(".card-container").appendChild(newCard);
-    }
-    //add 10 new images to card images array
-    //update setCards array so that the iteration length is the length of cardImages array
-    //update timer to 10 minutes
-};
