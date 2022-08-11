@@ -32,15 +32,20 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 
 ## Game Screenshots:
 Below: Initialize
-![alt text](images/startscreen.png)
+![A screenshot showing the ocean memory game before any moves have been made](images/startscreen.png)
 Below: Mid-game
-![alt text](images/playscreen.png)
+![A screenshot showing the ocean memory game, mid-game](images/playscreen.png)
 Below: Win screen
-![alt text](images/winscreen.png)
+![A screenshot showing the ocean memory game after it has been won](images/winscreen.png)
 
 ## Project Hurdles
-* Card flip - new for me
-* getting the cards to flip back over, because the timer, clear array before timer, set new timer. Coudln't be at the same time beause flip depends on array.
+* Finding a method to "flip" a card over was my first big hurdle. I considered creating HTML elements that could be hidden and revealed, or buttons that lost and gained their transparency, but it all seemed sloppy to me. Eventually I stumbled across css transform and background-visibility properties and they seemed like the perfect tool. I spent time really trying to understand the functionality of these properties so that I could not only use them, but also manipulate them throughout the game.
+
+* The second hurdle I came across was creating the checkMatch function. The concept was simple enough - check if a match exists, if yes, change some DOM elements, log match, clear the current player choices (stored in the curCards array) and flip the cards back over. The card flip was set to occur after a couple of seconds via a setTimeout function that chose the cards based on the contents of the curCards array. I couldn't get the cards to flip back! I singled out the timer logic and determined that it was, in fact working, so it must have to do with the array. At that point I realized that the array was clearing before the "timer" went off. I set the array to clear a millisecond after the card flip timer went off, and the problem was solved. 
+
+* Throughout the project I wrestled with how best to organize my code. I am clean and organized in most aspects of my life, this certainly will not be an exception. The problem is, the world of coding is new enough to me that I don't completely know what "clean and organized" looks like. On the other hand, even as a novice I know when I see a messy disaster. I found that revisiting my pseudocode and creating a flow chart (see below) helped me organize my ideas. From there it was easier to write my code in a more organized way. This, in turn, made it more accessible for later debugging and adjustments. 
+
+![Flow chart of game functions](images/Flowchart.png)
 
 ## Other sources: 
 
@@ -51,3 +56,5 @@ Below: Win screen
 * [Wireframe: Win Scenario](https://whimsical.com/memory-game-win-JKjhm2bYTJAuGcc92UrdqZ)
 
 * [Wireframe: Lose Scenario](https://whimsical.com/memory-game-loss-WdfemVQmZnRXTf9fUevtpc)
+
+* Image credit: me! I drew them. 
