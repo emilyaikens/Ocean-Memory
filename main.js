@@ -18,8 +18,8 @@ const domSelect = {
     resetButton: document.getElementById("play-again") //reset button at bottom of page
 };
 
-shuffleId(vars.cardImages);
-setCards();
+shuffleId(vars.cardImages); //see line 59
+setCards(); //see line 71
 
 domSelect.cards.forEach(function(card) { //for each card with the card class...
     card.addEventListener('click', function clickCard() { //on click
@@ -39,7 +39,7 @@ domSelect.cards.forEach(function(card) { //for each card with the card class...
     });
 });
 
-function checkMatch () {
+function checkMatch () { //checks if a match has been made
     if (vars.firstSelect === vars.secondSelect) { //if the images are the same...
         vars.matches = vars.matches + 1; //...add a match
         domSelect.matches.innerHTML = ("Matches: " + vars.matches); //update screen to show matches
@@ -56,7 +56,7 @@ function checkMatch () {
     setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
 };
 
-function shuffleId(array) {
+function shuffleId(array) { //shuffles the ids 
     let currentId = array.length;
     let randomId;
     while (currentId != 0) { //for as long as the array length is less than 0
@@ -68,7 +68,7 @@ function shuffleId(array) {
     return array;
 };
 
-function setCards () {        
+function setCards () {  //assigns images to the shuffled ids
     for (let i = 0; i < 16; i++) {
         const img = document.createElement("img"); //create a new image div
         img.src = vars.cardImages[i]; //image source is an image from image array
@@ -76,7 +76,7 @@ function setCards () {
         };
 };
 
-function gameTimer() {
+function gameTimer() { //creates a timer for the game. This timer determins conditions for win and loss
     let time = vars.min * 60; //time variable keeps track of total seconds
     let myInterval = setInterval(timer, 1000); // one second interval
     function timer() {
@@ -97,7 +97,7 @@ function gameTimer() {
     };
 };
 
-function playerWin(element) { //DOM updates to directions
+function playerWin(element) { //if win conditions are met (see gameTimer) DOM updates to directions
     element.innerHTML = "Congratulations, you won!";
     element.style.textTransform = "uppercase";
     element.classList.add("wiggle"); // add class "wiggle" to the directions 
