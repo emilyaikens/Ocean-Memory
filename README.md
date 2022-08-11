@@ -3,10 +3,21 @@
 ## Description:
 A simple, ocean-themed memory game built for my first General Assembly Software Engineering Immersive project.
 
+## Technical Requirements
+1. Render game in browser
+2. Include win/loss logic and render win/loss messages in HTML
+3. Include separate HTML, CSS, and JavaScript files
+4. Use vanilla JavaScript or jQuery
+5. All code should be properly indented
+6. No remaining dead or commented out code
+7. Code in a consistent manner
+8. Project should be deployed online using gitHub
+
 ## Technologies Used: 
 * HTML
 * CSS
 * JavaScript
+* GitHub Branching
 
 ## Getting Started: 
 
@@ -16,7 +27,8 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 
 ## Next steps: 
 
-* Expansion! Create an option to play on a larger board (6x6). 
+* [Expansion!](https://github.com/emilyaikens/Project-1-Extension) Create an option to play on a larger board (6x6)
+* Themes! Allow user to select different themes for the game eg. space cats, botanical, robots etc.
 
 ## Game Screenshots:
 Below: Initialize
