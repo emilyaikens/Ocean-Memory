@@ -45,7 +45,7 @@ Below: Win screen
 
 * Throughout the project I wrestled with how best to organize my code. I am clean and organized in most aspects of my life, this certainly will not be an exception. The problem is, the world of coding is new enough to me that I don't completely know what "clean and organized" looks like. On the other hand, even as a novice I know when I see a messy disaster. I found that revisiting my pseudocode and creating a flow chart (see below) helped me organize my ideas. From there it was easier to write my code in a more organized way. This, in turn, made it more accessible for later debugging and adjustments. 
 
-![Flow chart of game functions](images/Flowchart.png)
+![Flow chart of game functions](images/flowchart.png)
 
 ## Other sources: 
 
@@ -56,5 +56,7 @@ Below: Win screen
 * [Wireframe: Win Scenario](https://whimsical.com/memory-game-win-JKjhm2bYTJAuGcc92UrdqZ)
 
 * [Wireframe: Lose Scenario](https://whimsical.com/memory-game-loss-WdfemVQmZnRXTf9fUevtpc)
+
+* [Wireframe: Functions Flow Chart](https://whimsical.com/BZJpjzvMjzVhn7sShnXn3b)
 
 * Image credit: me! I drew them. 
