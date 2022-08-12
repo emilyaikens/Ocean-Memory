@@ -32,10 +32,15 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 
 ## Game Screenshots:
 Below: Initialize
+
 ![A screenshot showing the ocean memory game before any moves have been made](images/startscreen.png)
+
 Below: Mid-game
+
 ![A screenshot showing the ocean memory game, mid-game](images/playscreen.png)
+
 Below: Win screen
+
 ![A screenshot showing the ocean memory game after it has been won](images/winscreen.png)
 
 ## Project Hurdles
