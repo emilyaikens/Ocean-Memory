@@ -27,7 +27,7 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 
 ## Next steps: 
 
-* [Expansion!](https://github.com/emilyaikens/Project-1-Extension) Create an option to play on a larger board (6x6)
+* [Expansion!](https://github.com/emilyaikens/Project-1-Extension) Create an option to play on a larger board (6x6). This expansion is on ice for now.
 * Themes! Allow user to select different themes for the game eg. space cats, botanical, robots etc.
 
 ## Game Screenshots:
