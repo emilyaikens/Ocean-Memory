@@ -14,10 +14,14 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 8. Project should be deployed online using gitHub
 
 ## Technologies Used: 
-* HTML
-* CSS
-* JavaScript
-* GitHub Branching
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## Getting Started: 
 
@@ -25,12 +29,8 @@ A simple, ocean-themed memory game built for my first General Assembly Software 
 
 * Instructions: Click on a card to flip it over. Each card has a double somewhere else on the board - try to find it! To win, you must find all of the matches within the time limit. Keep in mind, you can only flip over two cards at a time!
 
-## Next steps: 
-
-* [Expansion!](https://github.com/emilyaikens/Project-1-Extension) Create an option to play on a larger board (6x6). This expansion is on ice for now.
-* Themes! Allow user to select different themes for the game eg. space cats, botanical, robots etc.
-
 ## Game Screenshots:
+
 Below: Initialize
 
 ![A screenshot showing the ocean memory game before any moves have been made](images/startscreen.png)
@@ -44,6 +44,7 @@ Below: Win screen
 ![A screenshot showing the ocean memory game after it has been won](images/winscreen.png)
 
 ## Project Hurdles
+
 * Finding a method to "flip" a card over was my first big hurdle. I considered creating HTML elements that could be hidden and revealed, or buttons that lost and gained their transparency, but it all seemed sloppy to me. Eventually I stumbled across css transform and background-visibility properties and they seemed like the perfect tool. I spent time really trying to understand the functionality of these properties so that I could not only use them, but also manipulate them throughout the game.
 
 * The second hurdle I came across was creating the checkMatch function. The concept was simple enough - check if a match exists, if yes, change some DOM elements, log match, clear the current player choices (stored in the curCards array) and flip the cards back over. The card flip was set to occur after a couple of seconds via a setTimeout function that chose the cards based on the contents of the curCards array. I couldn't get the cards to flip back! I singled out the timer logic and determined that it was, in fact working, so it must have to do with the array. At that point I realized that the array was clearing before the "timer" went off. I set the array to clear a millisecond after the card flip timer went off, and the problem was solved. 
@@ -52,7 +53,7 @@ Below: Win screen
 
 ![Flow chart of game functions](images/flow-chart.png)
 
-## Other sources: 
+## Other Planning Sources: 
 
 * [Psuedocode Google Sheets Link](https://docs.google.com/document/d/1LdG4PHq_HRYHKUmoWMRiXVa6-AjTFsh6L7WUj7Yd5FE/edit?usp=sharing)
 
@@ -65,3 +66,8 @@ Below: Win screen
 * [Wireframe: Functions Flow Chart](https://whimsical.com/BZJpjzvMjzVhn7sShnXn3b)
 
 * Image credit: me! I drew them. 
+
+## IceBox: 
+
+* [Expansion (WIP)](https://github.com/emilyaikens/Project-1-Extension) Create an option to play on a larger board (6x6). This expansion is on ice for now.
+* Themes! Allow user to select different themes for the game eg. space cats, botanical, robots etc.
