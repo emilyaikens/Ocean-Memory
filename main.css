@@ -37,7 +37,7 @@ h1 {
     padding: 0px 0px 5px 0px;
 }
 #directions {
-    padding: 20px 0px 5px 0px
+    padding: 20px 0px 5px 0px;
 }
 .card {
     width: 100px;
@@ -99,13 +99,13 @@ img {
 }
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(5deg); }
-   95% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+    80% { transform: rotate(0deg); }
+    85% { transform: rotate(5deg); }
+    95% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }
 .wiggle {
-  animation: wiggle 1.5s;
+    animation: wiggle 1.5s;
 }
 #top, #bottom, #left, #right {
 	background: #A3CFCD;
@@ -124,3 +124,30 @@ img {
 		}
 		#top { top: 0; }
 		#bottom { bottom: 0; }
+
+@media only screen and (max-width: 500px) {
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+    img {
+        height: 70px;
+        width: 70px;
+    }
+    #more-directions {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+    img {
+        height: 60px;
+        width: 60px;
+    }
+    #more-directions {
+        width: 300px;
+    }
+}
