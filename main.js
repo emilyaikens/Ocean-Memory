@@ -49,11 +49,11 @@ function checkMatch () { //checks if a match has been made
                 let currentCard = document.getElementById(card); //...get their id
                 currentCard.parentElement.classList.toggle("flipped");// ...use that id to change the flipped class
             })
-    }, 1500);
+    }, 900);
     };
     vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
     vars.secondSelect = "null";
-    setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
+    setTimeout(function(){vars.curCards = []}, 901); //clears current card array after timed flip executes
 };
 
 function shuffleId(array) { //shuffles the ids 
